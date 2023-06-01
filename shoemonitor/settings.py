@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = "shoemonitor.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "shoemonitor (+http://www.yourdomain.com)"
+USER_AGENT = "shoemonitor (+http://github.com/jkbh/shoemonitor)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -62,9 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "shoemonitor.pipelines.ShoemonitorPipeline": 300,
-#}
+ITEM_PIPELINES = {
+   "shoemonitor.pipelines.ShoemonitorPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
