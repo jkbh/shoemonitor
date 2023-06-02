@@ -6,10 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
+    <script type="text/javascript">
+        fetch('items.json')
+            .then(response => response.text())
+            .then(text => text.split('\n').slice(0, -1))
+            .then(items => items.map(item => JSON.parse(item)))
+            .then(items => appendData(items))
+            .catch(err => console.log(err));
+
+        function appendData(items) {
+            const table = document.getElementById('data-table');
+            items.forEach(item => {
+                const row = table.insertRow(-1);
+                row.insertCell(0).innerHTML = item.name;
+                row.insertCell(1).innerHTML = item.price;
+                row.insertCell(2).innerHTML = item.sizes;
+            });
+        }
+    </script>
 </head>
 
 <body>
     <h1>Shoemonitor</h1>
+    <input type="text" id="search" placeholder="Search for names...">
+
+    <table id="data-table">
+        <tr class="table_header">
+            <th>Name</th>
+            <th>Price</th>
+            <th>Sizes</th>
+        </tr>
+    </table>
 </body>
 
 </html>
