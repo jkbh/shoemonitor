@@ -16,7 +16,7 @@ class ShoemonitorPipeline:
     def open_spider(self, spider):
         current_dir = os.path.dirname(os.path.realpath(__file__))
         project_dir = os.path.split(current_dir)[0]
-        items_path = os.path.join(project_dir, 'web', 'items.json')
+        items_path = os.path.join(project_dir, 'shoemonitor-web', 'items.json')
 
         self.file = open(items_path, 'wb')
         self.exporter = JsonLinesItemExporter(self.file)

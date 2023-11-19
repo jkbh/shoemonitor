@@ -3,6 +3,6 @@
     "gh-pages": "^5.0.0"
   },
   "scripts": {
-    "deploy": "gh-pages -d web"
+    "deploy": "gh-pages -d shoemonitor-web"
   }
 }
