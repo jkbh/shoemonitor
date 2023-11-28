@@ -7,7 +7,7 @@ from shoemonitor.loaders import ShoeLoader
 class BasketballdirektSpider(scrapy.Spider):
     name = "basketballdirekt"
     allowed_domains = ["www.basketballdirekt.de"]
-    start_urls = ["https://www.basketballdirekt.de/basketballschuhe?sort=best&category=basketballschuhe"]
+    start_urls = ["https://www.basketballdirekt.de/basketballschuhe"]
 
     def parse(self, response):
         page_urls = response.css("a.page-link::attr(href)").getall()
