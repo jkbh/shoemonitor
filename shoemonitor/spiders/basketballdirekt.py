@@ -1,6 +1,4 @@
 import scrapy
-from scrapy.loader import ItemLoader
-from scrapy.loader.processors import TakeFirst, MapCompose, Identity
 from shoemonitor.items import ShoeItem
 from shoemonitor.loaders import ShoeLoader
 
